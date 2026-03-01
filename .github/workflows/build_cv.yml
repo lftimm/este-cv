@@ -13,8 +13,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Compile CV
-        uses: hspaans/latexmk-action@v2.0.0
-          with:
-            format: pdf
-            filename: main.tex
+        uses: hspaans/latexmk-action@v2.1.0
+        with:
+          format: pdf
+          filename: main.tex
 
