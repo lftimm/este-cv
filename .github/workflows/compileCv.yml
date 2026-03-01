@@ -1,0 +1,16 @@
+name: Compile CV
+
+on:
+  push:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: xu-cheng/latex-action@v4
+      with:
+        root_file: main.tex
