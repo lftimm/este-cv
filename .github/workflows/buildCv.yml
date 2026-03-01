@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build cv:
+  build_cv:
     runs-on: ubuntu-latest
 
     steps:
