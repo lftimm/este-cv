@@ -1,16 +1,19 @@
-name: Compile CV
+name: Build CV
 
 on:
   push:
     branches: [ "master" ]
 
-  workflow_dispatch:
-
 jobs:
-  build:
+  build cv:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: xu-cheng/latex-action@v4
-      with:
-        root_file: main.tex
+    - name: Compile CV
+      uses: hspaans/latexmk-action@v2.0.0
+        with:
+          format: pdf
+          filename: main.tex
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
