@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Compile CV
-      uses: hspaans/latexmk-action@v2.0.0
-        with:
-          format: pdf
-          filename: main.tex
+      - name: Compile CV
+        uses: hspaans/latexmk-action@v2.0.0
+          with:
+            format: pdf
+            filename: main.tex
 
-    - name: Create Release
-      uses: softprops/action-gh-release@v2
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
