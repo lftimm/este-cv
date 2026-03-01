@@ -14,6 +14,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
       - name: Compile CV
         uses: hspaans/latexmk-action@v2.1.0
         with:
@@ -26,8 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: CV-${{ steps.date.outputs.date }}
+          release_name: Release ${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
   
